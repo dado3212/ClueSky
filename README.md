@@ -43,7 +43,6 @@ python main.py
 * botanical garden
 * build confidence
 * business as usual
-* Business As Usual
 * Cage The Elephant
 * capital gains tax
 * carbon footprint
@@ -86,7 +85,7 @@ python main.py
 * ethical concerns
 * ethnic cleansing
 * ever in your favor
-* ever now and then
+* every now and then
 * every single time
 * excellent choice
 * Exchange of Ideas
