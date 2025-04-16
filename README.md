@@ -11,7 +11,7 @@ python -m pip install -r requirements.txt
 ## Run
 ```
 source venv/bin/activate
-python main.py
+python -u main.py > tmp.txt 2>&1
 ```
 
 ## Thanks To
