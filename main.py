@@ -4,7 +4,7 @@ from atproto import CAR, models
 from atproto_firehose import FirehoseSubscribeReposClient, parse_subscribe_repos_message
 
 # Define the target
-target_length = 15
+target_length = 13
 strings = {}
 # Filter out things that are likely to be partials
 # Or just known bad Bsky formats
@@ -19,7 +19,13 @@ def on_message_handler(message):
       if op.action in ["create"] and op.cid:
         raw = car.blocks.get(op.cid)
         cooked = get_or_create(raw, strict=False)
-        if cooked is not None and cooked.py_type == "app.bsky.feed.post":
+        # Exclude IEMbot which is weather spam
+        if (
+          cooked is not None
+          and cooked.py_type == "app.bsky.feed.post"
+          and 'IEMbot' not in raw['text']
+          and '🕒 Current times' not in raw['text']
+        ):
           # We want only full phrases so splitting on periods makes sure that
           # we don't span areas. Could be missing things,
           # ^^ actually, maybe we just wait?
