@@ -14,6 +14,8 @@ source venv/bin/activate
 python -u main.py > tmp.txt 2>&1
 ```
 
+python tests.py
+
 ## Thanks To
 * stuartlangridge and aiden-powers for [this code](https://gist.github.com/stuartlangridge/20ffe860fee0ecc315d3878c1ea77c35) which I used wholesale :D
 
